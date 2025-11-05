@@ -5,7 +5,8 @@ def get_num_words(book):
     for words in word_list:
         num_words += 1
 
-    print(f"Found {num_words} total words")
+    return num_words
+    #print(f"Found {num_words} total words")
 
 def get_chars(book):
     characters = {}
@@ -18,6 +19,7 @@ def get_chars(book):
         else:
             characters[character] = 1 
 
-    print(characters)
+    return characters
+    #print(characters)
 
 #get_chars("A simple SET of mixed CHARacters for TEStING")
