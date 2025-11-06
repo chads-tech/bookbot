@@ -7,7 +7,7 @@ def get_book_text(file):
     with open(file) as f:
         return f.read()
 
-def main(book):
+def get_wc_ch(book):
     book_string = get_book_text(book)
     wc = get_num_words(book_string) # Passes string from get_book_text to get_num_words
     ch = get_chars(book_string)
@@ -15,4 +15,4 @@ def main(book):
     print(wc)
     print(ch)
 
-main(frankenstein)
+get_wc_ch(frankenstein)
