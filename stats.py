@@ -24,22 +24,27 @@ def get_chars(book):
     return characters
     #print(characters)
 
-def sort_by(index):
-    #return index
-    pass
+def sort_by(dictionary): # Takes in dictionary, then returns a value inside the dictionary
+    return dictionary["num"]
 
 def build_report(chars):
-    new_counter = {}
+    dictionary_characters = get_chars(chars)
+    list_of_dictionaries = []
 
-    for letter in chars:
-        ...
+    for char in dictionary_characters:
+        #if char.isalpha() == False:
+        list_of_dictionaries.append({"char": char, "num": dictionary_characters[char]})
+    
+    list_of_dictionaries.sort(reverse=True, key=sort_by)
+    return list_of_dictionaries
 
 def test_function():
     testing_string = "A simple SET of mixed CHARacters for TEStING"
 
     wc = get_num_words(testing_string)
     ch = get_chars(testing_string)
-    #report = build_report(get_chars(testing_string))
-    return wc, ch
+    report = build_report(get_chars(testing_string))
+    #return wc, ch
+    return report
 
-print(test_function())
+#print(test_function())
