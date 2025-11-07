@@ -1,8 +1,13 @@
+import sys
 from stats import get_num_words
 from stats import get_chars
 from stats import build_report
 
-frankenstein = "books/frankenstein.txt"
+if len(sys.argv) != 2:
+    print("Usage: python3 main.py <path_to_book>")
+    sys.exit(1)
+
+book_path = sys.argv[1]
 
 def get_book_text(file):
     with open(file) as f:
@@ -34,5 +39,4 @@ def format_output(book, wc, report):
     for character in report:
         print(f"{character["char"]}: {character["num"]}")
 
-#get_wc_ch(frankenstein)
-format_output(frankenstein, get_wc_ch(frankenstein), get_report(frankenstein))
+format_output(book_path, get_wc_ch(book_path), get_report(book_path))
